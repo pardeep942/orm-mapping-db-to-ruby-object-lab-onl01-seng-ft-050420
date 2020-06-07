@@ -84,10 +84,10 @@ def self.students_below_12th_grade
   SELECT * from students WHERE grade = 10 ORDERED BY students.id
   limit ?;
   SQL
-  DB[:conn].execute(sql)
- end
-end
-
+  DB[:conn].execute(sql, number).map do |row|
+      self.new_from_db(row)
+    end
+  end	  
 
 
 
