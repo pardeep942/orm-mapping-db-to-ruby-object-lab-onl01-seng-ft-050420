@@ -86,7 +86,10 @@ def self.students_below_12th_grade
   SQL
   DB[:conn].execute(sql, number)
     end
-    
+      def self.first_student_in_grade_10
+        
+        
+
   end	  
 
 
