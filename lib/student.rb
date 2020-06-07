@@ -86,6 +86,7 @@ def self.students_below_12th_grade
   SQL
   DB[:conn].execute(sql, number)
     end
+    
   end	  
 
 
