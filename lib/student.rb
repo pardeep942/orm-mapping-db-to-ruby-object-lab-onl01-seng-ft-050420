@@ -84,7 +84,7 @@ def self.students_below_12th_grade
   sql = <<-SQL
   SELECT * FROM students WHERE grade = 10 limit = ?
   SQL
-  DB[:conn].execute(sql, x)
+  DB[:conn].execute(sql)
   
     end
     
