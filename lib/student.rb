@@ -8,12 +8,8 @@ class Student
   new_student.name =  row[1]
   new_student.grade = row[2]
   new_student  # return the newly created instance
-end 
-
-  
 end
 
-  
 
   def self.all
     # retrieve all the rows from the "Students" database
@@ -50,3 +46,4 @@ end
     sql = "DROP TABLE IF EXISTS students"
     DB[:conn].execute(sql)
   end
+end
