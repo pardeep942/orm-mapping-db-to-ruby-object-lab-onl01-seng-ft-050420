@@ -102,7 +102,8 @@ def self.students_below_12th_grade
       SELECT * FROM students WHERE grade = ? ORDER BY students.id;
     SQL
 
-    DB[:conn].execute(sql, grade).map do |row|
+    DB[:conn].execute(sql, grade).first
+      
       self.new_from_db(row)
     end
 end
