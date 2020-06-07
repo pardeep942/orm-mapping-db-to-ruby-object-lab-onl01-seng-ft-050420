@@ -19,7 +19,7 @@ end
       FROM students
     SQL
  
-    DB[:conn].execute(sql, self.name, self.grade)
+    DB[:conn].execute(sql)
   end
 
   def self.find_by_name(name)
