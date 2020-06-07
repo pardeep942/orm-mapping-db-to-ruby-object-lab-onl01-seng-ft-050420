@@ -87,13 +87,10 @@ def self.students_below_12th_grade
   DB[:conn].execute(sql, number)
     end
     
+    
       def self.first_student_in_grade_10
-        
-         SELECT *
-      FROM students
-      WHERE grade = 10
-      ORDER BY students.id
-      LIMIT 1;
+        sql = <<-SQL
+    SELECT *FROM students WHERE grade = 10 ORDER BY students.id LIMIT 1;
     SQL
 
     row = DB[:conn].execute(sql).first
