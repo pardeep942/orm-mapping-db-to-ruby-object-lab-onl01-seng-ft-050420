@@ -97,12 +97,12 @@ def self.students_below_12th_grade
     self.new_from_db(row)
   end
   
-  def self.all_students_in_grade_X(grade).map do |row|
+  def self.all_students_in_grade_X(grade)
     sql = <<-SQL
       SELECT * FROM students WHERE grade = ?  ORDER BY students.grade LIMIT 1;
     SQL
 
-    DB[:conn].execute(sql, grade).first
+    DB[:conn].execute(sql, grade).map do |row|
       self.new_from_db(row)
       
     end
