@@ -10,7 +10,7 @@ class Student
   new_student  # return the newly created instance
   
 end
-  end
+  
 
   def self.all
     # retrieve all the rows from the "Students" database
