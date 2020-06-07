@@ -96,6 +96,7 @@ def self.students_below_12th_grade
     row = DB[:conn].execute(sql).first
     self.new_from_db(row)
   end
+end
   
   
 
