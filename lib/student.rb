@@ -73,7 +73,7 @@ end
 
 def self.all_students_below_12th_grade
     sql = <<-SQL
-       SELECT * FROM students where grade < 12
+       SELECT * FROM students where grade < 11
     SQL
 
     DB[:conn].execute(sql)
