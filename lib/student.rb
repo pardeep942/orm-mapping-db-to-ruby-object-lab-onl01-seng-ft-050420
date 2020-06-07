@@ -29,12 +29,10 @@ end
     # return a new instance of the Student class
     sql = <<-SQL
       SELECT *
-      FROM songs
-      WHERE name = ?
-      LIMIT 1
+      FROM students WHERE name = ?
     SQL
  
-    DB[:conn].execute(sql, name).map do |row|
+    DB[:conn].execute(sql, name).collect do |row|
       self.new_from_db(row)
     end.first
   end
