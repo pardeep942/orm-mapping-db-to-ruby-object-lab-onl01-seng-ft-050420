@@ -19,8 +19,8 @@ end
       FROM students
     SQL
  
-    DB[:conn].execute(sql).map do |1|
-      self.new_from_db (1)
+    DB[:conn].execute(sql).map do |i|
+      self.new_from_db (i)
     end
   end
 
